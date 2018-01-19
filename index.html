@@ -155,6 +155,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-php对于类的总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/19/php对于类的总结/">php对于类的总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/19/php对于类的总结/" class="archive-article-date">
+  	<time datetime="2018-01-19T10:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/19/php对于类的总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nginx-负载均衡" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -181,9 +243,13 @@
 <h2 id="其他疑问-以及nginx-的相关信息"><a href="#其他疑问-以及nginx-的相关信息" class="headerlink" title="其他疑问 以及nginx 的相关信息"></a>其他疑问 以及nginx 的相关信息</h2><p>如果循环连接服务器那是不是就要给每个服务配置一样的代码？<br>最开始 我理解的就是这样 ，利用svn 或者 git 的钩子 hook 再加上 pssh 同时给负载均衡的服务器提交代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pssh命令是一个python编写可以在多台服务器上执行命令的工具，同时支持拷贝文件，是同类工具中很出色的，类似pdsh，个人认为相对pdsh更为简便，使用必须在各个服务器上配置好密钥认证访问。</span><br></pre></td></tr></table></figure>
 <p>但是 后来经过查找资料和询问有三种方式</p>
+<p>1.文件共享 </p>
 <blockquote>
-<p>1.文件共享<br>A为文件服务器，B C 为负载均衡服务器，B C 服务器开机自启 共享 A 的资源<br>共享代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o rw xxx.xxx.2.2:/</span><br></pre></td></tr></table></figure></p>
-<p>2.文件同步<br>就是 跟我刚开始想的一样</p>
+<p>A为文件服务器，B C 为负载均衡服务器，B C 服务器开机自启 共享 A 的资源<br>共享代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o rw xxx.xxx.2.2:/</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>2.文件同步</p>
+<blockquote>
+<p>就是 跟我刚开始想的一样</p>
 </blockquote>
 
       
@@ -333,26 +399,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MVVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx  服务器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">标签一</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">标签二</a>
-              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>

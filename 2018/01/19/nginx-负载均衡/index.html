@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>nginx 负载均衡 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="测试">
+  <meta name="description" content="今天听到老大讲了nginx 的负载均衡,记录一下，方便以后查询 以下模块均在nginx http模块下。upstream用于定义哪些服务器进行负载，”循环播放”，weight是权重，权重越大，讯轮几率越大。12345678upstream o.6dcx.com&amp;#123;  server xx.xx.xx.47:80 weight=10;    server xx.xx.xxx.144:80 we">
+<meta name="keywords" content="nginx,服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx 负载均衡">
 <meta property="og:url" content="http://yoursite.com/2018/01/19/nginx-负载均衡/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:updated_time" content="2018-01-19T06:33:51.066Z">
+<meta property="og:description" content="今天听到老大讲了nginx 的负载均衡,记录一下，方便以后查询 以下模块均在nginx http模块下。upstream用于定义哪些服务器进行负载，”循环播放”，weight是权重，权重越大，讯轮几率越大。12345678upstream o.6dcx.com&amp;#123;  server xx.xx.xx.47:80 weight=10;    server xx.xx.xxx.144:80 we">
+<meta property="og:updated_time" content="2018-01-19T08:25:47.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx 负载均衡">
+<meta name="twitter:description" content="今天听到老大讲了nginx 的负载均衡,记录一下，方便以后查询 以下模块均在nginx http模块下。upstream用于定义哪些服务器进行负载，”循环播放”，weight是权重，权重越大，讯轮几率越大。12345678upstream o.6dcx.com&amp;#123;  server xx.xx.xx.47:80 weight=10;    server xx.xx.xxx.144:80 we">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -175,7 +178,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>今天听到老大讲了nginx 的负载均衡,记录一下，方便以后查询</p>
+<h2 id="以下模块均在nginx-http模块下。"><a href="#以下模块均在nginx-http模块下。" class="headerlink" title="以下模块均在nginx http模块下。"></a>以下模块均在nginx http模块下。</h2><h2 id="upstream"><a href="#upstream" class="headerlink" title="upstream"></a>upstream</h2><p>用于定义哪些服务器进行负载，”循环播放”，weight是权重，权重越大，讯轮几率越大。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">upstream o.6dcx.com&#123;</span><br><span class="line">  server xx.xx.xx.47:80 weight=10;  </span><br><span class="line">  server xx.xx.xxx.144:80 weight=10;  </span><br><span class="line">&#125;</span><br><span class="line">upstream o.6dcx.com:443&#123;</span><br><span class="line">  server xx.xxx.xx.47:443 weight=10;</span><br><span class="line">  server xxx.xxx.xxx.xxx:443 weight=10;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><p>设置监听服务，监听端口号，设置反向代理的服务端口以及表头信息。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen  80;</span><br><span class="line">  server_name o.xxx.com;</span><br><span class="line">  location / &#123;</span><br><span class="line">      proxy_pass        http://xxx.xxx.com;</span><br><span class="line">      proxy_http_version 1.1;</span><br><span class="line">      proxy_set_header Connection <span class="string">""</span>;</span><br><span class="line">      proxy_set_header   Host             <span class="variable">$host</span>;</span><br><span class="line">      proxy_set_header   X-Real-IP        <span class="variable">$remote_addr</span>;</span><br><span class="line">      proxy_set_header   X-Forwarded-For  <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">      proxy_buffer_size 256k;</span><br><span class="line">      proxy_buffers 4 256k;</span><br><span class="line">      proxy_busy_buffers_size 256k;</span><br><span class="line">      proxy_temp_file_write_size 256k;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">  listen  443;</span><br><span class="line">  server_name o.6dcx.com;</span><br><span class="line">  ssl on;</span><br><span class="line">  ssl_certificate      /usr/<span class="built_in">local</span>/services/nginx-1.8.0/conf/xxxx.com_bundle.crt;</span><br><span class="line">  ssl_certificate_key  /usr/<span class="built_in">local</span>/services/nginx-1.8.0/conf/xxxxx.com.key;</span><br><span class="line">  ssl_session_timeout  5m;</span><br><span class="line">  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">  ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;</span><br><span class="line">  ssl_prefer_server_ciphers   on;</span><br><span class="line">  location / &#123;</span><br><span class="line">      proxy_pass        http://xxxxx.com;</span><br><span class="line">      proxy_http_version 1.1;</span><br><span class="line">      proxy_set_header Connection <span class="string">""</span>;</span><br><span class="line">      proxy_set_header   Host             <span class="variable">$host</span>;</span><br><span class="line">      proxy_set_header   X-Real-IP        <span class="variable">$remote_addr</span>;</span><br><span class="line">      proxy_set_header   X-Forwarded-For  <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">      proxy_set_header   X-HTTPS          on;</span><br><span class="line">      proxy_buffer_size 256k;</span><br><span class="line">      proxy_buffers 4 256k;</span><br><span class="line">      proxy_busy_buffers_size 256k;</span><br><span class="line">      proxy_temp_file_write_size 256k;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="其他疑问-以及nginx-的相关信息"><a href="#其他疑问-以及nginx-的相关信息" class="headerlink" title="其他疑问 以及nginx 的相关信息"></a>其他疑问 以及nginx 的相关信息</h2><p>如果循环连接服务器那是不是就要给每个服务配置一样的代码？<br>最开始 我理解的就是这样 ，利用svn 或者 git 的钩子 hook 再加上 pssh 同时给负载均衡的服务器提交代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pssh命令是一个python编写可以在多台服务器上执行命令的工具，同时支持拷贝文件，是同类工具中很出色的，类似pdsh，个人认为相对pdsh更为简便，使用必须在各个服务器上配置好密钥认证访问。</span><br></pre></td></tr></table></figure>
+<p>但是 后来经过查找资料和询问有三种方式</p>
+<p>1.文件共享<br>A为文件服务器，B C 为负载均衡服务器，B C 服务器开机自启 共享 A 的资源<br>共享代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o rw xxx.xxx.2.2:/</span><br></pre></td></tr></table></figure></p>
+<p>2.文件同步<br>就是 跟我刚开始想的一样</p>
+
       
 
       
@@ -209,7 +220,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">服务器</a>
         		</li>
       		
 		</ul>
@@ -412,6 +427,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MVVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx  服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">标签一</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">标签二</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
               </li>
             
             <div class="clearfix"></div>

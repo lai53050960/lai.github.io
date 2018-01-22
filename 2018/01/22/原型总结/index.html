@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>&#39;随笔&#39; | 博客</title>
+  <title>原型总结 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="&#39;随笔&#39;">
-<meta property="og:url" content="http://yoursite.com/tags/随笔/index.html">
+  <meta name="description" content="112345678var obj = new Object();obj.a = 10;obj.b = 20;var arr = new Array();arr[0] = 5;arr[1] = &apos;x&apos;;arr[2] = true; 而其中的 Object 和 Array 都是函数：console.log(typeof (Object));  // functionconsole.log(typeof">
+<meta name="keywords" content="js,原型,转载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型总结">
+<meta property="og:url" content="http://yoursite.com/2018/01/22/原型总结/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:updated_time" content="2018-01-19T10:04:12.398Z">
+<meta property="og:description" content="112345678var obj = new Object();obj.a = 10;obj.b = 20;var arr = new Array();arr[0] = 5;arr[1] = &apos;x&apos;;arr[2] = true; 而其中的 Object 和 Array 都是函数：console.log(typeof (Object));  // functionconsole.log(typeof">
+<meta property="og:updated_time" content="2018-01-22T09:20:39.516Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;随笔&#39;">
+<meta name="twitter:title" content="原型总结">
+<meta name="twitter:description" content="112345678var obj = new Object();obj.a = 10;obj.b = 20;var arr = new Array();arr[0] = 5;arr[1] = &apos;x&apos;;arr[2] = true; 而其中的 Object 和 Array 都是函数：console.log(typeof (Object));  // functionconsole.log(typeof">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -154,27 +158,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-原型总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      &#39;随笔&#39;
+      原型总结
     </h1>
   
 
         
-        <a href="/tags/随笔/index.html" class="archive-article-date">
-  	<time datetime="2018-01-19T10:00:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
+        <a href="/2018/01/22/原型总结/" class="archive-article-date">
+  	<time datetime="2018-01-22T09:09:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.a = <span class="number">10</span>;</span><br><span class="line">obj.b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">5</span>;</span><br><span class="line">arr[<span class="number">1</span>] = <span class="string">'x'</span>;</span><br><span class="line">arr[<span class="number">2</span>] = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>而其中的 Object 和 Array 都是函数：<br>console.log(typeof (Object));  // function<br>console.log(typeof (Array));  // function</p>
+<h3 id="所以，可以很负责任的说——对象都是通过函数来创建的。"><a href="#所以，可以很负责任的说——对象都是通过函数来创建的。" class="headerlink" title="所以，可以很负责任的说——对象都是通过函数来创建的。"></a>所以，可以很负责任的说——对象都是通过函数来创建的。</h3><h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>例子<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">this</span>.xxx = xxx ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里的 this  是 函数实例化 之后 用的 ，否则 this 指向 windows</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>如果函数作为对象的一个属性时，并且作为对象的一个属性被调用时，函数中的this指向该对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    x: <span class="number">10</span> ,</span><br><span class="line">    fn : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//object &#123;xxxx&#125;</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.x); <span class="comment">// 10</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn();</span><br></pre></td></tr></table></figure></p>
+<p>以上代码中，fn不仅作为一个对象的一个属性，而且的确是作为对象的一个属性被调用。结果this就是obj对象。<br>当视为属性调用时有值 而当直接调用这个方法时就完蛋了。</p>
+
       
 
       
@@ -203,6 +213,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原型</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转载</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -253,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/随笔/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/22/原型总结/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,6 +294,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/01/22/jq的再次实用封装/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          jq的再次实用封装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/22/php常用函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php常用函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -315,7 +363,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

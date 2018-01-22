@@ -8,14 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>php对于类的总结 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="php,类">
+  <meta name="description" content="随着接触的项目越来越大，认识到类的继承对于整个项目的框架至关重要。使用tp3.2目录为例： 项目框架 1234567891011121314151617181920212223242526--tp    --app        --Common            --Model                --Basemodel.class.php                --Use">
+<meta name="keywords" content="php,类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php对于类的总结">
 <meta property="og:url" content="http://yoursite.com/2018/01/19/php对于类的总结/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:updated_time" content="2018-01-19T10:13:47.313Z">
+<meta property="og:description" content="随着接触的项目越来越大，认识到类的继承对于整个项目的框架至关重要。使用tp3.2目录为例： 项目框架 1234567891011121314151617181920212223242526--tp    --app        --Common            --Model                --Basemodel.class.php                --Use">
+<meta property="og:updated_time" content="2018-01-22T08:50:48.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php对于类的总结">
+<meta name="twitter:description" content="随着接触的项目越来越大，认识到类的继承对于整个项目的框架至关重要。使用tp3.2目录为例： 项目框架 1234567891011121314151617181920212223242526--tp    --app        --Common            --Model                --Basemodel.class.php                --Use">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -175,7 +178,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>随着接触的项目越来越大，认识到类的继承对于整个项目的框架至关重要。<br>使用tp3.2目录为例：</p>
+<h3 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h3><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">--tp</span><br><span class="line">    --app</span><br><span class="line">        --Common</span><br><span class="line">            --Model</span><br><span class="line">                --Basemodel.class.php</span><br><span class="line">                --Usermodel.class.php</span><br><span class="line">            --Conf    </span><br><span class="line">        --lib</span><br><span class="line">            --Cls</span><br><span class="line">                --通用类</span><br><span class="line">            --Redis</span><br><span class="line">                --BaseRedis.class.php</span><br><span class="line">                --UserRedis.class.php</span><br><span class="line">            --队列</span><br><span class="line">            --Memcached</span><br><span class="line">            --等等       </span><br><span class="line">        --项目1</span><br><span class="line">            --Common</span><br><span class="line">            --Controller</span><br><span class="line">                --BaseController.class.php</span><br><span class="line">                --IndexController.class.php</span><br><span class="line">            --View</span><br><span class="line">        --项目2</span><br><span class="line">    --res</span><br><span class="line">    --index.php</span><br><span class="line">    --thinkphp</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="项目详解"><a href="#项目详解" class="headerlink" title="项目详解"></a>项目详解</h3><blockquote>
+<p>项目1可以为后台管理网站，简称admin，项目2为前端用户网站，简称index。</p>
+<h2 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h2><p>common文件夹中放子项目中公用的Model层，就是数据层和整个项目的配置文件</p>
+<h1 id="Basemodel"><a href="#Basemodel" class="headerlink" title="Basemodel"></a>Basemodel</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Common</span>\<span class="title">Model</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description of SubModel</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Administrator</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseModel</span> <span class="keyword">extends</span> \<span class="title">Think</span>\<span class="title">Model</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;connection = C(<span class="string">'数据库配置项'</span>);</span><br><span class="line">        <span class="keyword">parent</span>::__construct();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从代码中可以看出，BaseModel相当于所有modle 的入口文件 ，而他自己本身也继承了 tp 的model，<br>并且这样我们就能每次都能配置你想去找的数据库服务器，以及他的相关配置。<br>所以当你要写usermodel时，或者其他 model 时 你就要让他们extends BaseMolde 。</p>
+</blockquote>
+<h2 id="Lib"><a href="#Lib" class="headerlink" title="Lib"></a>Lib</h2><blockquote>
+<p>Lib 文件夹 主要放置加载的工具例如缓存，队列，其内部结构也要用extendx进行控制。</p>
+<h1 id="BaseRedis"><a href="#BaseRedis" class="headerlink" title="BaseRedis"></a>BaseRedis</h1><p>与Model 一样，在base中写你要的配置项。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Lib</span>\<span class="title">Redis</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description of MainRedis</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Administrator</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseRedis</span> <span class="keyword">extends</span> \<span class="title">Think</span>\<span class="title">Db</span>\<span class="title">RedisBase</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@var</span> string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> $_config = <span class="string">'aaaa'</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="项目1"><a href="#项目1" class="headerlink" title="项目1"></a>项目1</h2><h1 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h1><blockquote>
+<p>接下来就是最重要Controller的base，BaseController继承tp 的controller ，而其他的Controller<br>全部都继承BaseController，并且你能在Base 中设置很多基本项 ，比如登录者的信息，网页的基本配置，<br>，并且这些参数你还可以在单独的controller 中进行更改，这样下来 整个项目就会特别的贯通。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Mp</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description of BaseController</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Administrator</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseController</span> <span class="keyword">extends</span> <span class="title">Controller</span> </span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> $member;</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">_initialize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="IndexController"><a href="#IndexController" class="headerlink" title="IndexController"></a>IndexController</h1><blockquote>
+<p>而在其他的controller 中<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Mp</span>\<span class="title">Controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> <span class="keyword">extends</span> <span class="title">BaseController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">_initialize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::_initialize();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>还可以利用parent:: 还可以对自己再次定义配置。</p>
+
       
 
       
@@ -282,6 +306,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/01/22/php常用函数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          php常用函数
+        
+      </div>
+    </a>
   
   
     <a href="/2018/01/19/nginx-负载均衡/" id="article-nav-older" class="article-nav-link-wrap">
@@ -411,19 +444,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: php | 博客</title>
+  <title>php常用函数 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="博客">
-<meta property="og:url" content="http://yoursite.com/tags/php/index.html">
+  <meta name="description" content="preg_match() preg_match() 函数用于进行正则表达式匹配，成功返回 1 ，否则返回 0 。preg_match() 匹配成功一次后就会停止匹配，如果要实现全部结果的匹配，则需使用preg_match_all() 函数。12345678 &amp;lt;?php  // 模式定界符后面的 &quot;i&quot; 表示不区分大小写字母的搜索 if (preg_match (&quot;/hi/i&quot;, &quot;Welco">
+<meta name="keywords" content="php,函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php常用函数">
+<meta property="og:url" content="http://yoursite.com/2018/01/22/php常用函数/index.html">
 <meta property="og:site_name" content="博客">
+<meta property="og:description" content="preg_match() preg_match() 函数用于进行正则表达式匹配，成功返回 1 ，否则返回 0 。preg_match() 匹配成功一次后就会停止匹配，如果要实现全部结果的匹配，则需使用preg_match_all() 函数。12345678 &amp;lt;?php  // 模式定界符后面的 &quot;i&quot; 表示不区分大小写字母的搜索 if (preg_match (&quot;/hi/i&quot;, &quot;Welco">
+<meta property="og:updated_time" content="2018-01-22T06:25:17.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客">
+<meta name="twitter:title" content="php常用函数">
+<meta name="twitter:description" content="preg_match() preg_match() 函数用于进行正则表达式匹配，成功返回 1 ，否则返回 0 。preg_match() 匹配成功一次后就会停止匹配，如果要实现全部结果的匹配，则需使用preg_match_all() 函数。12345678 &amp;lt;?php  // 模式定界符后面的 &quot;i&quot; 表示不区分大小写字母的搜索 if (preg_match (&quot;/hi/i&quot;, &quot;Welco">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -153,36 +158,109 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-php常用函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/22/php常用函数/" class="archive-article-date">
-  	<time datetime="2018-01-22T02:45:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/22/php常用函数/">php常用函数</a>
+    <h1 class="article-title" itemprop="name">
+      php常用函数
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/22/php常用函数/" class="archive-article-date">
+  	<time datetime="2018-01-22T02:45:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="preg-match"><a href="#preg-match" class="headerlink" title="preg_match()"></a>preg_match()</h2><blockquote>
+<p>preg_match() 函数用于进行正则表达式匹配，成功返回 1 ，否则返回 0 。<br>preg_match() 匹配成功一次后就会停止匹配，如果要实现全部结果的匹配，则需使用preg_match_all() 函数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span> </span><br><span class="line"> <span class="comment">// 模式定界符后面的 "i" 表示不区分大小写字母的搜索 </span></span><br><span class="line"><span class="keyword">if</span> (preg_match (<span class="string">"/hi/i"</span>, <span class="string">"Welcome to hi-docs.com."</span>)) &#123; </span><br><span class="line"> <span class="keyword">echo</span> <span class="string">"A match was found."</span>; </span><br><span class="line"> &#125; <span class="keyword">else</span> &#123; </span><br><span class="line"><span class="keyword">echo</span> <span class="string">"A match was not found."</span>; </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="sprintf"><a href="#sprintf" class="headerlink" title="sprintf()"></a>sprintf()</h2><blockquote>
+<p>把百分号（%）符号替换成一个作为参数进行传递的变量：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line">$number = <span class="number">2</span>;</span><br><span class="line">$str = <span class="string">"Shanghai"</span>;</span><br><span class="line">$txt = sprintf(<span class="string">"There are %u million cars in %s."</span>,$number,$str);</span><br><span class="line"><span class="keyword">echo</span> $txt;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>%d - 包含正负号的十进制数（负数、0、正数）<br>%s - 字符串<br>%f - 浮点数<br>例如 微信模板的替换:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$msg = sprintf(<span class="keyword">self</span>::WINE_SAVE, date(<span class="string">"m/d H:i"</span>, $SMS_TIME), $puberName, $storeName, $wineData);</span><br></pre></td></tr></table></figure></p>
+<p>self::WINE_SAVE 是微信模板 模板信息是<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> WINE_SAVE = <span class="string">'尊敬的客户，您于%s在%s-%s存入%s请您在有效期前到店消费'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>4 个 %s 依次对应 4个时间</p>
+<h2 id="strpos"><a href="#strpos" class="headerlink" title="strpos()"></a>strpos()</h2><blockquote>
+<p>查找 “php” 在字符串中第一次出现的位置：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> strpos(<span class="string">"You love php, I love php too!"</span>,<span class="string">"php"</span>);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>用于搜索（有些数据没再mysql,而是在redis,查询出redis的数据用函数进行匹配）</p>
+<h2 id="array-slice"><a href="#array-slice" class="headerlink" title="array_slice()"></a>array_slice()</h2><blockquote>
+<p>实例<br>从数组的第三个元素开始取出，并返回数组中的其余元素：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$a=<span class="keyword">array</span>(<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"blue"</span>,<span class="string">"yellow"</span>,<span class="string">"brown"</span>);</span><br><span class="line">print_r(array_slice($a,<span class="number">2</span>));</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="call-user-func"><a href="#call-user-func" class="headerlink" title="call_user_func()"></a>call_user_func()</h2><blockquote>
+<p>mixed call_user_func ( callable $callback [, mixed $parameter [, mixed $… ]] )<br>把第一个参数作为回调函数调用<br>第一个参数 callback 是被调用的回调函数，其余参数是回调函数的参数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$url = sprintf(<span class="string">"\%sController"</span>, CONTROLLER_NAME);</span><br><span class="line">call_user_func(<span class="keyword">array</span>(<span class="keyword">__NAMESPACE__</span> . $url, $action));</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>先利用 sprintf 整合tp格式的url，整理命名空间 + controller + action 就能直接调用到改方法</p>
+<h2 id="usort"><a href="#usort" class="headerlink" title="usort()"></a>usort()</h2><blockquote>
+<p>使用用户自定义的比较函数对数组 $a 中的元素进行排序：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">my_sort</span><span class="params">($a,$b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> ($a==$b) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">return</span> ($a&lt;$b)?<span class="number">-1</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$a=<span class="keyword">array</span>(<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">6</span>);</span><br><span class="line">usort($a,<span class="string">"my_sort"</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>利用 usort 的自定义模式 收集了一个将二维数组排序的方法</p>
+<blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $arrays 二维数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $sort_key  要排序的键名</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> int $sort_order</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> int $sort_type</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> array|bool</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">my_sort</span><span class="params">($arrays, $sort_key, $sort_order = SORT_ASC, $sort_type = SORT_NUMERIC)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;order_key = $sort_key;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;sort_order= $sort_order;</span><br><span class="line">    usort($arrays,<span class="function"><span class="keyword">function</span><span class="params">($a, $b)</span></span>&#123;</span><br><span class="line">        $sort = <span class="keyword">$this</span>-&gt;sort_order ;</span><br><span class="line">        $key = <span class="keyword">$this</span>-&gt;order_key ;</span><br><span class="line">        $al = $a[$key];</span><br><span class="line">        $bl = $b[$key];</span><br><span class="line">        <span class="keyword">if</span> ($sort == <span class="number">3</span> ) &#123;</span><br><span class="line">            <span class="keyword">if</span> ($al == $bl)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">return</span> ($al &gt; $bl) ? <span class="number">-1</span> : <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> ($al == $bl)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">return</span> ($al &gt; $bl) ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> $arrays;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="array-combine"><a href="#array-combine" class="headerlink" title="array_combine()"></a>array_combine()</h2><blockquote>
+<p>通过合并两个数组来创建一个新数组，其中的一个数组元素为键名，另一个数组元素为键值：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$fname=<span class="keyword">array</span>(<span class="string">"Bill"</span>,<span class="string">"Steve"</span>,<span class="string">"Mark"</span>);</span><br><span class="line">$age=<span class="keyword">array</span>(<span class="string">"60"</span>,<span class="string">"56"</span>,<span class="string">"31"</span>);</span><br><span class="line"></span><br><span class="line">$c=array_combine($fname,$age);</span><br><span class="line">print_r($c);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>得到<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Array</span> ( [Bill] =&gt; <span class="number">60</span> [Steve] =&gt; <span class="number">56</span> [Mark] =&gt; <span class="number">31</span> )</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="array-column"><a href="#array-column" class="headerlink" title="array_column()"></a>array_column()</h2><blockquote>
+<p>从记录集中取出 last_name 列：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 表示由数据库返回的可能记录集的数组</span></span><br><span class="line">$a = <span class="keyword">array</span>(</span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'id'</span> =&gt; <span class="number">5698</span>,</span><br><span class="line">    <span class="string">'first_name'</span> =&gt; <span class="string">'Bill'</span>,</span><br><span class="line">    <span class="string">'last_name'</span> =&gt; <span class="string">'Gates'</span>,</span><br><span class="line">  ),</span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'id'</span> =&gt; <span class="number">4767</span>,</span><br><span class="line">    <span class="string">'first_name'</span> =&gt; <span class="string">'Steve'</span>,</span><br><span class="line">    <span class="string">'last_name'</span> =&gt; <span class="string">'Jobs'</span>,</span><br><span class="line">  )</span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'id'</span> =&gt; <span class="number">3809</span>,</span><br><span class="line">    <span class="string">'first_name'</span> =&gt; <span class="string">'Mark'</span>,</span><br><span class="line">    <span class="string">'last_name'</span> =&gt; <span class="string">'Zuckerberg'</span>,</span><br><span class="line">  )</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">$last_names = array_column($a, <span class="string">'last_name'</span>);</span><br><span class="line">print_r($last_names);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Array</span></span><br><span class="line">(</span><br><span class="line">  [<span class="number">0</span>] =&gt; Gates</span><br><span class="line">  [<span class="number">1</span>] =&gt; Jobs</span><br><span class="line">  [<span class="number">2</span>] =&gt; Zuckerberg</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="array-combine-array-column"><a href="#array-combine-array-column" class="headerlink" title="array_combine + array_column"></a>array_combine + array_column</h2><blockquote>
+<p>利用以上两个函数能够直接得到一个二维数组，可以指定 内部某个键值为这个大数组的键值<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$new_item = array_combine(array_column($finddata, <span class="string">'id'</span>), $finddata);</span><br></pre></td></tr></table></figure></p>
+<p>finddata 是我从数据库查到的一组数据，每个数组内部有键值 ‘id’ ，所以<br>array_column($finddata, ‘id’) 得到的是就是 所有数组中的id 的数组。<br>例如 ：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$finddata =<span class="keyword">array</span>(</span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'id'</span> =&gt; <span class="number">5698</span>,</span><br><span class="line">    <span class="string">'first_name'</span> =&gt; <span class="string">'Bill'</span>,</span><br><span class="line">    <span class="string">'last_name'</span> =&gt; <span class="string">'Gates'</span>,</span><br><span class="line">  ), </span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'id'</span> =&gt; <span class="number">4767</span>,</span><br><span class="line">    <span class="string">'first_name'</span> =&gt; <span class="string">'Steve'</span>,</span><br><span class="line">    <span class="string">'last_name'</span> =&gt; <span class="string">'Jobs'</span>,</span><br><span class="line">  )</span><br><span class="line">  <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'id'</span> =&gt; <span class="number">3809</span>,</span><br><span class="line">    <span class="string">'first_name'</span> =&gt; <span class="string">'Mark'</span>,</span><br><span class="line">    <span class="string">'last_name'</span> =&gt; <span class="string">'Zuckerberg'</span>,</span><br><span class="line">  )</span><br><span class="line">);</span><br><span class="line">print_r(array_column($finddata, <span class="string">'id'</span>));</span><br></pre></td></tr></table></figure></p>
+<p>得到的是<br>array = array(<br>    0 =&gt; 5698,<br>    1 =&gt; 4767,<br>    2 =&gt; 3809<br>);<br>而最后array_combine(array_column($finddata, ‘id’), $finddata) 得到的就是<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span> =<span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'5698'</span>=&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'id'</span> =&gt; <span class="number">5698</span>,</span><br><span class="line">        <span class="string">'first_name'</span> =&gt; <span class="string">'Bill'</span>,</span><br><span class="line">        <span class="string">'last_name'</span> =&gt; <span class="string">'Gates'</span></span><br><span class="line">    ),</span><br><span class="line">    <span class="string">'4767'</span>=&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'id'</span> =&gt; <span class="number">4767</span>,</span><br><span class="line">        <span class="string">'first_name'</span> =&gt; <span class="string">'Steve'</span>,</span><br><span class="line">        <span class="string">'last_name'</span> =&gt; <span class="string">'Jobs'</span>   </span><br><span class="line">    ),</span><br><span class="line">    <span class="string">'3809'</span>=&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'id'</span> =&gt; <span class="number">3809</span>,</span><br><span class="line">        <span class="string">'first_name'</span> =&gt; <span class="string">'Mark'</span>,</span><br><span class="line">        <span class="string">'last_name'</span> =&gt; <span class="string">'Zuckerberg'</span>   </span><br><span class="line">    ) </span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>这样做的好处就是整理一次之后，如果你想要拿某个键值的数组能够直接‘$aaa[‘你想要的键值’]’取到，不用再循环。</p>
+</blockquote>
+<h2 id="curl"><a href="#curl" class="headerlink" title="curl()"></a>curl()</h2><blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ch = curl_init();</span><br><span class="line"></span><br><span class="line">curl_setopt($ch,CURLOPT_URL,<span class="string">"http://www.21cto.com/"</span>);</span><br><span class="line"></span><br><span class="line">curl_setopt($ch,CURLOPT_RETURNTRANSFER,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">curl_setopt($ch,CURLOPT_REFERER,<span class="string">"http://weibi.com/"</span>);</span><br><span class="line"></span><br><span class="line">curl_setopt($ch,CURLOPT_HEADER,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">$result = curl_exec($ch);</span><br><span class="line"></span><br><span class="line">curl_close($ch);</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $result ;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="array-walk"><a href="#array-walk" class="headerlink" title="array_walk()"></a>array_walk()</h2><blockquote>
+<p>对数组中的每个元素应用用户自定义函数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myfunction</span><span class="params">($value,$key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"The key $key has the value $value&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">$a=<span class="keyword">array</span>(<span class="string">"a"</span>=&gt;<span class="string">"red"</span>,<span class="string">"b"</span>=&gt;<span class="string">"green"</span>,<span class="string">"c"</span>=&gt;<span class="string">"blue"</span>);</span><br><span class="line">array_walk($a,<span class="string">"myfunction"</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="array-map"><a href="#array-map" class="headerlink" title="array_map()"></a>array_map()</h2><blockquote>
+<p>将函数作用到数组中的每个值上，每个值都乘以本身，并返回带有新值的数组：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myfunction</span><span class="params">($v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">return</span>($v*$v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$a=<span class="keyword">array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line">print_r(array_map(<span class="string">"myfunction"</span>,$a));</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="list"><a href="#list" class="headerlink" title="list()"></a>list()</h2><blockquote>
+<p>把数组中的值赋给一些变量：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$my_array = <span class="keyword">array</span>(<span class="string">"Dog"</span>,<span class="string">"Cat"</span>,<span class="string">"Horse"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">list</span>($a, $b, $c) = $my_array;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"I have several animals, a $a, a $b and a $c."</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>实例<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>($page,$start,$end)= <span class="keyword">array</span>(</span><br><span class="line">        <span class="keyword">isset</span>($data[<span class="string">'page'</span>])?$data[<span class="string">'page'</span>]:<span class="number">1</span>,</span><br><span class="line">        $data[<span class="string">'start'</span>],</span><br><span class="line">        $data[<span class="string">'end'</span>]</span><br><span class="line">        );</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,61 +276,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/22/php常用函数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/19/php对于类的总结/" class="archive-article-date">
-  	<time datetime="2018-01-19T10:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/19/php对于类的总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php对于类的总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/19/php对于类的总结/">php对于类的总结</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -275,9 +398,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

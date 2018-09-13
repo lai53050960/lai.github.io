@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>php5权威编程总结笔记 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="静态 方法、变量 你现在可以定义静态方法，不用实例化就能使用它们。静态方法不支持$this 变量，因为他们并没有绑定到任何具体的对象；12345678class Myclass &amp;#123;    static function helloWorld()     &amp;#123;        print &quot;hello,world&quot;;    &amp;#125;&amp;#125;Myclass::helloWorl">
+  <meta name="description" content="以下是读php5权威编程的总结笔记，（）中是自己的想法。 静态 方法、变量 你现在可以定义静态方法，不用实例化就能使用它们。静态方法不支持$this 变量，因为他们并没有绑定到任何具体的对象；12345678class Myclass &amp;#123;    static function helloWorld()     &amp;#123;        print &quot;hello,world&quot;;    &amp;">
+<meta name="keywords" content="php,类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php5权威编程总结笔记">
 <meta property="og:url" content="http://yoursite.com/2018/07/24/php5权威编程/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="静态 方法、变量 你现在可以定义静态方法，不用实例化就能使用它们。静态方法不支持$this 变量，因为他们并没有绑定到任何具体的对象；12345678class Myclass &amp;#123;    static function helloWorld()     &amp;#123;        print &quot;hello,world&quot;;    &amp;#125;&amp;#125;Myclass::helloWorl">
-<meta property="og:updated_time" content="2018-07-24T08:45:35.856Z">
+<meta property="og:description" content="以下是读php5权威编程的总结笔记，（）中是自己的想法。 静态 方法、变量 你现在可以定义静态方法，不用实例化就能使用它们。静态方法不支持$this 变量，因为他们并没有绑定到任何具体的对象；12345678class Myclass &amp;#123;    static function helloWorld()     &amp;#123;        print &quot;hello,world&quot;;    &amp;">
+<meta property="og:updated_time" content="2018-09-13T07:47:37.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php5权威编程总结笔记">
-<meta name="twitter:description" content="静态 方法、变量 你现在可以定义静态方法，不用实例化就能使用它们。静态方法不支持$this 变量，因为他们并没有绑定到任何具体的对象；12345678class Myclass &amp;#123;    static function helloWorld()     &amp;#123;        print &quot;hello,world&quot;;    &amp;#125;&amp;#125;Myclass::helloWorl">
+<meta name="twitter:description" content="以下是读php5权威编程的总结笔记，（）中是自己的想法。 静态 方法、变量 你现在可以定义静态方法，不用实例化就能使用它们。静态方法不支持$this 变量，因为他们并没有绑定到任何具体的对象；12345678class Myclass &amp;#123;    static function helloWorld()     &amp;#123;        print &quot;hello,world&quot;;    &amp;">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -177,13 +178,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="静态-方法、变量"><a href="#静态-方法、变量" class="headerlink" title="静态 方法、变量"></a>静态 方法、变量</h1><blockquote>
+        <p>以下是读php5权威编程的总结笔记，（）中是自己的想法。</p>
+<h1 id="静态-方法、变量"><a href="#静态-方法、变量" class="headerlink" title="静态 方法、变量"></a>静态 方法、变量</h1><blockquote>
 <p>你现在可以定义静态方法，不用实例化就能使用它们。静态方法不支持$this 变量，因为他们并没有绑定到任何具体的对象；<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">helloWorld</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"hello,world"</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Myclass::helloWorld() ;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h1 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h1><blockquote>
 <p>类的定义现在包含静态成员（属性），可以通过类的自身来访问。通常用的最多的是单件模式；<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">private</span> $instance = <span class="keyword">NULL</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getInstance</span> <span class="params">()</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">self</span>::$instance == <span class="keyword">NULL</span>) &#123;</span><br><span class="line">            <span class="keyword">self</span>::$instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::$instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>（通过这样的类 可以静态调用 并且只会实例化一次）<br>让我们看一下，通过他们如何把一个唯一的id 传递到类的所有实例中；<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>（通过这样的类 可以静态调用 并且只会实例化一次）<br>让我们看一下，通过他们如何把一个唯一的id 传递到类的所有实例中；<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyUniqueIdClss</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> $idCounter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $uniqueId;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">self</span>::$idCounter++;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;uniqueId = <span class="keyword">self</span>::idCounter;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$obj1 = <span class="keyword">new</span> MyUniqueIdClass();</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> $obj-&gt;uniqueId . *\n<span class="string">";</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">$obj2 = new MyUniqueIdClass();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">print $obj2-&gt;uniqueId . *\n"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>（每一次实例化 静态变量都会自己加1）</p>
 </blockquote>
+<h1 id="全局变量-GLOBALS"><a href="#全局变量-GLOBALS" class="headerlink" title="全局变量 $GLOBALS"></a>全局变量 $GLOBALS</h1><blockquote>
+<p>你可以使用 一个特殊的数组 $GLOBALS[] 来访问他 ，使用变量的名字作为字符串关键字<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$PI = <span class="number">3.14</span>;</span><br><span class="line">$radius = <span class="number">5</span>;</span><br><span class="line">$circumference = $GLOBALS[<span class="string">'PI'</span>] * <span class="number">2</span> * $GLOBALS[<span class="string">'radius'</span>];</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>可以使用$GLOBALS 调用已注册的变量</p>
+<h1 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h1><blockquote>
+<p>销毁实例<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'销毁'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = <span class="keyword">new</span> Myclass();</span><br><span class="line">$obj = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="OOP-摘抄"><a href="#OOP-摘抄" class="headerlink" title="OOP 摘抄"></a>OOP 摘抄</h1><ul>
+<li>public<blockquote>
+<p>公共成员既可以既可以通过对象外部使用 $obj-&gt;publicMember 访问，也可以用特殊变量$this(例如，$this-&gt;publicMember) 从内部的方法访问。如果另外一个类继承了这个公共变量，这个规则同样适用，而且从这个类的对象的外部和内部的方法都可以访问。</p>
+</blockquote>
+</li>
+<li>protected<blockquote>
+<p>保护成员只能从对象内部的方法访问-例如$this-&gt;protected-&gt;Member。如果另外一个类继承一个保护的成员，同样的规则也适用，而且它可以从继承实例化的对象的方法中通过特殊的$this变量访问到。</p>
+</blockquote>
+</li>
+</ul>
 
       
 
@@ -213,6 +233,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -423,6 +458,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -431,15 +474,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">类</a>
               </li>
              
               <li class="article-tag-list-item">
